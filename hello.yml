@@ -1,0 +1,25 @@
+# Name of the workflow as it appears in the Actions tab
+name: Date and Directory Workflow
+
+# Define when the workflow should run
+on: [push]
+
+jobs:
+  hello_world_job:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Print Hello World!
+      - name: Say Hello World!
+        run: echo "Hello World!"
+      
+      # Step 2: Print the current date
+      - name: Print the date
+        # The 'run' command executes the 'date' utility
+        run: date
+      
+      # Step 3: Print the directory contents in long format
+      - name: List directory contents
+        # The 'run' command executes the 'ls -l' utility
+        run: ls -l
