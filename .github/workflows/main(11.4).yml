@@ -1,0 +1,22 @@
+name: Date and Directory Check
+
+on:
+  push:
+    branches: [ master, main ] # Trigger the workflow on every push to master or main branch
+
+jobs:
+  hello_world_job: # Define a job named 'hello_world_job'
+    runs-on: ubuntu-latest # Specify the type of runner machine to use
+
+    steps: # A job is composed of steps
+    - name: Set up job
+      uses: actions/checkout@v4 # This is the standard initial step, but we will remove it for now to match your initial scenario
+
+    - name: Say hello
+      run: echo "Hello World!"
+
+    - name: Now it is
+      run: date # Run the 'date' command to print the current date
+
+    - name: Directory content
+      run: ls -l # Run the 'ls -l' command to list directory contents in long format
